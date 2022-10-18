@@ -6,4 +6,5 @@ app_name = 'accounts'
 
 urlpatterns = [
     path('', views.LoginView.as_view(), name='login'),
+    path('painel/', views.teste, name='painel')
 ]

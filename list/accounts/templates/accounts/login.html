@@ -8,7 +8,7 @@
 </head>
 <body>
     LOGIN VIEW
-    <form action="{% url 'accounts:login' %}">
+    <form action="{% url 'accounts:login' %}" method='POST'>
         {% csrf_token %}
         {{form}}
         <button type="submit">ENVIAR</button>
