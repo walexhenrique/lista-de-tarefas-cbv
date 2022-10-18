@@ -14,9 +14,11 @@ class LoginView(View):
     def post(self, *args, **kwargs):
         form = LoginForm(self.request.POST)
         if form.is_valid():
+
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(self.request, username=username, password=password)
+
             if user:
                 login(self.request, user)
                 return redirect('accounts:painel')
@@ -35,7 +37,9 @@ class RegisterView(View):
         self.request.session['register_data'] = POST
         
         form = RegisterForm(POST)
+        
         if form.is_valid():
+
             user = form.save(commit=False)
             user.set_password(user.password)
             user.save()
