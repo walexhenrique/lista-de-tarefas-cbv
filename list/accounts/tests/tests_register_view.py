@@ -5,6 +5,7 @@ from .tests_accounts_base import AccountsBaseTest
 
 
 class RegisterViewTest(AccountsBaseTest):
+    """class responsible for essential tests for the operation of the view register"""
     def setUp(self) -> None:
         self.url = reverse('accounts:register')
         self.form_data = {

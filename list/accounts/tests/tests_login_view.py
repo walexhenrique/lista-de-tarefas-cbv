@@ -25,7 +25,7 @@ class LoginViewTest(AccountsBaseTest):
         response = self.client.post(self.url, data=self.login_data)
 
         # Redirects to dashboard, login worked
-        self.assertRedirects(response, '/painel/')
+        self.assertRedirects(response, reverse('tasks:painel'))
     
     def test_login_username_does_not_belong_to_any_user_must_not_login(self) -> None:
 

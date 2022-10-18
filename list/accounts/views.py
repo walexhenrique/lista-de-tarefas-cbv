@@ -21,7 +21,7 @@ class LoginView(View):
 
             if user:
                 login(self.request, user)
-                return redirect('accounts:painel')
+                return redirect('tasks:painel')
         
         return redirect('accounts:login')
 
@@ -50,6 +50,3 @@ class RegisterView(View):
 
         return redirect('accounts:register')
 
-
-def teste(request):
-    return HttpResponse('testando painel')
