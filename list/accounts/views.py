@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import HttpResponse, redirect, render
 from django.views import View
 
@@ -45,6 +45,7 @@ class RegisterView(View):
             return redirect('accounts:login')
 
         return redirect('accounts:register')
+
 
 def teste(request):
     return HttpResponse('testando painel')
