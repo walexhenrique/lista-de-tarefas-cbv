@@ -15,6 +15,10 @@ class TarefaDeleteView(DeleteView):
     template_name = 'tasks/tarefa_delete.html'
     context_object_name = 'tarefa'
 
+    def get(self, request, *args, **kwargs):
+        tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
+        return super().get(request, *args, **kwargs)
+
 
 class TarefaCreateView(CreateView):
     model = Tarefa

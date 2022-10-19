@@ -15,3 +15,7 @@ class TasksURLsTest(TestCase):
     def test_tarefa_update_view_url_path_is_correct(self):
         url = reverse('tasks:update-tarefa', kwargs={'pk': 1})
         self.assertEqual(url, '/painel/editar-tarefa/1/')
+    
+    def test_tarefa_delete_view_url_path_is_correct(self):
+        url = reverse('tasks:delete-tarefa', kwargs={'pk': 1})
+        self.assertEqual(url, '/painel/apagar-tarefa/1/')
