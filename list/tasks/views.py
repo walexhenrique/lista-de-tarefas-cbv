@@ -1,8 +1,24 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic import CreateView
 
+from .forms import TarefaForm
 from .models import Tarefa
+
+
+class TarefaCreateView(CreateView):
+    model = Tarefa
+    form_class = TarefaForm
+    template_name = 'tasks/tarefa_create.html'
+    success_url = reverse_lazy('tasks:painel')
+
+    def form_valid(self, form):
+        form_edit = form.save(commit=False)
+        form_edit.user = self.request.user
+        form_edit.save()
+        return super().form_valid(form)
 
 
 class TarefaListView(View):

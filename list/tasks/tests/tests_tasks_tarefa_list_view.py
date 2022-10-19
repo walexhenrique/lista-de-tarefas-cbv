@@ -14,14 +14,14 @@ class TarefaListViewTest(TasksBaseTest):
         self.client.login(username='breno', password='123456')
         return user
     
-    def create_generic_pagination(self, page: str = '&page=1', per_page: int = 5):
+    def create_generic_pagination(self, per_page: int = 5):
         """simulates pagination according to the amount per page"""
         user = self.create_and_login()
         self.client.login(username='breno', password='123456')
 
         self.create_multiple_tasks(user, quantity=per_page+5)
         
-        response = self.client.get(self.url + f'?per={per_page}' + page)
+        response = self.client.get(self.url + f'?per={per_page}')
         return response
     
     def create_multiple_tasks(self, user: User, quantity: int = 10):
@@ -52,7 +52,12 @@ class TarefaListViewTest(TasksBaseTest):
     
     def test_tarefa_list_view_pagination_works_correctly_showing_the_tasks_of_a_given_page(self) -> None:
         """checks if pagination is correct, ordering is inverse by id"""
-        response = self.create_generic_pagination(page='&page=2')
+        user = self.create_and_login()
+        self.client.login(username='breno', password='123456')
+
+        self.create_multiple_tasks(user, quantity=10)
+        
+        response = self.client.get(self.url + f'?page=2')
         self.assertIn('tarefa 4', response.content.decode('utf-8'))
         self.assertNotIn('tarefa 5', response.content.decode('utf-8'))
 

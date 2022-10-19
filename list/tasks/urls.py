@@ -5,5 +5,6 @@ from . import views
 app_name = 'tasks'
 
 urlpatterns = [
-    path('painel/', views.TarefaListView.as_view(), name='painel' )
+    path('', views.TarefaListView.as_view(), name='painel'),
+    path('criar-tarefa/', views.TarefaCreateView.as_view(), name='create-tarefa'),
 ]
