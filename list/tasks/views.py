@@ -7,7 +7,7 @@ from .models import Tarefa
 
 class TarefaListView(View):
     def get(self, *args, **kwargs):
-        tarefas = Tarefa.objects.filter(user=self.request.user)
+        tarefas = Tarefa.objects.filter(user=self.request.user).order_by('-id')
         per_page = self.request.GET.get('per', '5')
 
         options_per_page = {
