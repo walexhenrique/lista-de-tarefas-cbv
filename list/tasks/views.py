@@ -1,11 +1,19 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.http import Http404
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DeleteView, UpdateView
 
 from .forms import TarefaForm
 from .models import Tarefa
+
+
+class TarefaDeleteView(DeleteView):
+    model = Tarefa
+    success_url = reverse_lazy('tasks:painel')
+    template_name = 'tasks/tarefa_delete.html'
+    context_object_name = 'tarefa'
 
 
 class TarefaCreateView(CreateView):
@@ -19,6 +27,17 @@ class TarefaCreateView(CreateView):
         form_edit.user = self.request.user
         form_edit.save()
         return super().form_valid(form)
+
+
+class TarefaUpdateView(UpdateView):
+    model = Tarefa
+    form_class = TarefaForm
+    template_name = 'tasks/tarefa_update.html'
+    success_url = reverse_lazy('tasks:painel')
+
+    def get(self, request, *args, **kwargs):
+        tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
+        return super().get(request, *args, **kwargs)
 
 
 class TarefaListView(View):

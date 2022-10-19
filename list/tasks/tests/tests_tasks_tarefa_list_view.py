@@ -51,7 +51,7 @@ class TarefaListViewTest(TasksBaseTest):
         self.assertEqual(len(response.context['page_obj']), 5)
     
     def test_tarefa_list_view_pagination_works_correctly_showing_the_tasks_of_a_given_page(self) -> None:
-        """checks if pagination is correct, ordering is inverse by id"""
+        """Checks if pagination is correct, ordering is inverse by id"""
         user = self.create_and_login()
         self.client.login(username='breno', password='123456')
 
