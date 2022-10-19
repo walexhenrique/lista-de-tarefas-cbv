@@ -1,0 +1,15 @@
+<header>
+    <div class="container">
+        <nav class="menu">
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'tasks:painel' %}">Painel</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
+                {% else %}
+                    <li><a href="{% url 'accounts:register' %}">Cadastrar</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Logar</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>
