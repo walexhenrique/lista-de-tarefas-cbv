@@ -1,3 +1,29 @@
-{% for tarefa in page_obj %}
-    {{ tarefa.title }}
-{% endfor %}
+{% extends 'global/base.html' %}
+{% block title %}Painel{% endblock title %}
+
+{% block content %}
+    <div class="content-list">
+        <h2 class="welcome">Bem vindo: {{user}}</h2>
+        <h1>SUAS TAREFAS:</h1>
+        <div class="task-create">
+            <a href="{% url 'tasks:create-tarefa' %}" class="new-task">Criar nova tarefa</a>
+        </div>
+        <div class="task-list">
+            {% for task in page_obj  %}
+                {% if task.finished %}
+                <div class="task-one finished">
+                {% else %}
+                <div class="task-one">
+                {% endif %}
+                    <div class="task-info">
+                        <h2 class="title">{{task.title}}</h2>
+                        <p class="created-at">Criado em: {{task.created_at}}</p>
+                        <p class="updated-at">Atualizado em: {{task.updated_at}}</p>
+                    </div>
+                    <a href="{% url 'tasks:update-tarefa' task.id %}" class="edit">Editar tarefa</a>
+                    <a href="{% url 'tasks:delete-tarefa' task.id %}" class="delete">Apagar tarefa</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
