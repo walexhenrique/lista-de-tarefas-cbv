@@ -8,6 +8,8 @@ from .forms.form_register import RegisterForm
 
 class LoginView(View):
     def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect('tasks:painel')
         form = LoginForm()
         return render(self.request, 'accounts/login.html', {'form': form})
     
@@ -28,6 +30,8 @@ class LoginView(View):
 
 class RegisterView(View):
     def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            return redirect('tasks:painel')
         data_session = self.request.session.get('register_data')
         form = RegisterForm(data_session)
         return render(self.request, 'accounts/register.html', {'form': form})

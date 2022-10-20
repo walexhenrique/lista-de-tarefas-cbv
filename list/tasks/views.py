@@ -1,6 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.generic import CreateView, DeleteView, UpdateView
 
@@ -8,6 +10,7 @@ from .forms import TarefaForm
 from .models import Tarefa
 
 
+@method_decorator(login_required, name='dispatch')
 class TarefaDeleteView(DeleteView):
     model = Tarefa
     success_url = reverse_lazy('tasks:painel')
@@ -18,7 +21,7 @@ class TarefaDeleteView(DeleteView):
         tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
         return super().get(request, *args, **kwargs)
 
-
+@method_decorator(login_required, name='dispatch')
 class TarefaCreateView(CreateView):
     model = Tarefa
     form_class = TarefaForm
@@ -31,7 +34,7 @@ class TarefaCreateView(CreateView):
         form_edit.save()
         return super().form_valid(form)
 
-
+@method_decorator(login_required, name='dispatch')
 class TarefaUpdateView(UpdateView):
     model = Tarefa
     form_class = TarefaForm
@@ -42,7 +45,7 @@ class TarefaUpdateView(UpdateView):
         tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
         return super().get(request, *args, **kwargs)
 
-
+@method_decorator(login_required, name='dispatch')
 class TarefaListView(View):
     def get(self, *args, **kwargs):
         tarefas = Tarefa.objects.filter(user=self.request.user).order_by('-id')
