@@ -1,6 +1,16 @@
 
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Enviar</button>
-</form>
+{% extends 'global/base.html' %}
+{% block title %}Atualizar tarefa{% endblock title %}
+
+{% block content %}
+    <div class="content">
+        <div class="content-form">
+            <h1>EDITAR TAREFA</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="send">Editar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

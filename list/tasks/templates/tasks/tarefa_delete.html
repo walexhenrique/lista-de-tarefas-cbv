@@ -1,5 +1,17 @@
-<form method="post">
-    {% csrf_token %}
-    <p>Você tem certeza que quer apagar: {{ tarefa.title }}</p>
-    <button type="submit">Confirmar</button>
-</form>
+
+
+{% extends 'global/base.html' %}
+{% block title %}Apagar tarefa{% endblock title %}
+
+{% block content %}
+    <div class="content">
+        <div class="content-form">
+            <h1>APAGAR TAREFA</h1>
+            <form method="post">
+                {% csrf_token %}
+                <p>Você tem certeza que quer apagar a tarefa: {{ tarefa.title }} ?</p>
+                <button type="submit" class="send">Apagar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

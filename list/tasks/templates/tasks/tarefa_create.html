@@ -1,5 +1,15 @@
-<form action="{% url 'tasks:create-tarefa' %}" method="post">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">Enviar</button>
-</form>
+{% extends 'global/base.html' %}
+{% block title %}Criar tarefa{% endblock title %}
+
+{% block content %}
+    <div class="content">
+        <div class="content-form">
+            <h1>CRIAR TAREFA</h1>
+            <form action="{% url 'tasks:create-tarefa' %}" method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="send">CRIAR</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

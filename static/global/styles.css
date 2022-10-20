@@ -55,6 +55,7 @@ header {
     margin: 4rem 0;
     display: flex;
     justify-content: center;
+    min-height: 70vh;
 }
 
 .content-form {
