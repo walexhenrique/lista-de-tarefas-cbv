@@ -9,21 +9,25 @@
             <a href="{% url 'tasks:create-tarefa' %}" class="new-task">Criar nova tarefa</a>
         </div>
         <div class="task-list">
-            {% for task in page_obj  %}
-                {% if task.finished %}
-                <div class="task-one finished">
-                {% else %}
-                <div class="task-one">
-                {% endif %}
-                    <div class="task-info">
-                        <h2 class="title">{{task.title}}</h2>
-                        <p class="created-at">Criado em: {{task.created_at}}</p>
-                        <p class="updated-at">Atualizado em: {{task.updated_at}}</p>
+            {% if page_obj %}
+                {% for task in page_obj  %}
+                    {% if task.finished %}
+                    <div class="task-one finished">
+                    {% else %}
+                    <div class="task-one">
+                    {% endif %}
+                        <div class="task-info">
+                            <h2 class="title">{{task.title}}</h2>
+                            <p class="created-at">Criado em: {{task.created_at}}</p>
+                            <p class="updated-at">Atualizado em: {{task.updated_at}}</p>
+                        </div>
+                        <a href="{% url 'tasks:update-tarefa' task.id %}" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Editar tarefa</a>
+                        <a href="{% url 'tasks:delete-tarefa' task.id %}" class="delete"><i class="fa fa-trash" aria-hidden="true"></i> Apagar tarefa</a>
                     </div>
-                    <a href="{% url 'tasks:update-tarefa' task.id %}" class="edit">Editar tarefa</a>
-                    <a href="{% url 'tasks:delete-tarefa' task.id %}" class="delete">Apagar tarefa</a>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                    <h3 class="not-tasks">Você não tem nenhuma tarefa cadastrada!</h3>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}

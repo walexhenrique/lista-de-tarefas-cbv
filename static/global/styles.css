@@ -1,5 +1,5 @@
 :root {
-    --color-background: #B8B4BD;
+    --color-background: #e2dce9;
     --color-menu: #220348;
     --color-font-secundary: #1F476D;
     --color-font-terciary: #5E0020;
@@ -7,6 +7,7 @@
     --color-white: #fff;
     --color-font-primary: #0A0016;
     --color-success: #A8E890;
+    --color-shadow: rgba(0, 0,0, 0.35);
 }
 
 * {
@@ -56,7 +57,8 @@ header {
     margin: 4rem 0;
     display: flex;
     justify-content: center;
-    min-height: 70vh;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .content-form {
@@ -132,13 +134,20 @@ footer a:hover {
 
 /* painel */
 
+.not-tasks {
+    font-size: 2rem;
+    color: var(--color-font-secundary);
+}
+
 .welcome {
     font-size: 3rem;
 }
 
 .content-list {
-    min-height: 80vh;
+    min-height: 90vh;
+    margin: 2rem;
 }
+
 .content-list h1 {
     font-size: 2rem;
     margin: 2rem 0.5rem;
@@ -175,7 +184,7 @@ footer a:hover {
 .task-one {
     width: 40%;
     margin: 3rem 0;
-    box-shadow: .3rem .3rem 1rem var(--color-font-primary);
+    box-shadow: 0 2rem 5rem var(--color-shadow);
     background: var(--color-font-terciary);
     transform: scale(1);
     transition: all 300ms ease-in-out;
@@ -238,7 +247,7 @@ footer a:hover {
     padding: 1rem;
     background: var(--color-font-primary);
     color: var(--color-white);
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     font-size: 1.9rem;
 }
 
@@ -248,4 +257,54 @@ footer a:hover {
 
 .message-success {
     background-color: var(--color-success);
+}
+
+/* responsive */
+
+@media screen and (max-width: 72rem) {
+    .task-one {
+        width: 100%;
+        margin: 2rem 5rem;
+    }
+}
+
+@media screen and (max-width: 45rem) {
+    .task-one {
+        margin: 2rem 1rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .task-info {
+        font-size: 1rem;
+    }
+    .edit, .delete {
+        font-size: 1.1rem;
+    }
+    .new-task {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    .menu {
+        padding: 1rem;
+    }
+
+    .menu ul {
+        justify-content: center;
+    }
+
+    footer h3 {
+        padding: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .content-form {
+        min-width: 0;
+        font-size: 1.5rem;
+    }
+
+    .content-form h1 {
+        font-size: 3rem;
+    }
+    
 }
