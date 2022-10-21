@@ -6,6 +6,7 @@
     --color-delete: #952146;
     --color-white: #fff;
     --color-font-primary: #0A0016;
+    --color-success: #A8E890;
 }
 
 * {
@@ -229,4 +230,22 @@ footer a:hover {
 .delete:hover {
     background: var(--color-white);
     color: var(--color-font-primary);
+}
+
+/* MESSAGES */
+
+.messages {
+    padding: 1rem;
+    background: var(--color-font-primary);
+    color: var(--color-white);
+    margin: 2rem 0;
+    font-size: 1.9rem;
+}
+
+.message-error {
+    background-color: var(--color-font-terciary);
+}
+
+.message-success {
+    background-color: var(--color-success);
 }

@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
@@ -20,6 +21,11 @@ class TarefaDeleteView(DeleteView):
     def get(self, request, *args, **kwargs):
         tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
         return super().get(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        messages.success(self.request, 'Tarefa excluida com sucesso')
+        return super().form_valid(form)
+
 
 @method_decorator(login_required, name='dispatch')
 class TarefaCreateView(CreateView):
@@ -32,6 +38,7 @@ class TarefaCreateView(CreateView):
         form_edit = form.save(commit=False)
         form_edit.user = self.request.user
         form_edit.save()
+        messages.success(self.request, 'Tarefa criada com sucesso!')
         return super().form_valid(form)
 
 @method_decorator(login_required, name='dispatch')
@@ -44,7 +51,15 @@ class TarefaUpdateView(UpdateView):
     def get(self, request, *args, **kwargs):
         tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
         return super().get(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        messages.success(self.request, 'Tarefa atualizada com sucesso')
+        return super().form_valid(form)
 
+    def form_invalid(self, form):
+        messages.error(self.request, 'Não foi possível atualizar essa tarefa')
+        return super().form_invalid(form)
+    
 @method_decorator(login_required, name='dispatch')
 class TarefaListView(View):
     def get(self, *args, **kwargs):

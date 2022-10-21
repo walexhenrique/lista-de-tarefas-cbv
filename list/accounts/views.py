@@ -1,5 +1,6 @@
-from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import HttpResponse, redirect, render
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.shortcuts import redirect, render
 from django.views import View
 
 from .forms.form_login import LoginForm
@@ -10,6 +11,7 @@ class LoginView(View):
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('tasks:painel')
+        
         form = LoginForm()
         return render(self.request, 'accounts/login.html', {'form': form})
     
@@ -24,6 +26,8 @@ class LoginView(View):
             if user:
                 login(self.request, user)
                 return redirect('tasks:painel')
+        
+        messages.error(self.request, 'Nome de usuário e Senha não correspondem!')
         
         return redirect('accounts:login')
 
@@ -49,6 +53,7 @@ class RegisterView(View):
             user.save()
             
             del(self.request.session['register_data'])
+            messages.success(self.request, 'Usuário criado com sucesso!')
 
             return redirect('accounts:login')
 
