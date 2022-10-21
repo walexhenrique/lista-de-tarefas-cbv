@@ -30,4 +30,29 @@
             {% endif %}
         </div>
     </div>
+    <div class="content-options">
+        <div class="pagination">
+            {% if page_obj.paginator.num_pages > 1 %}
+                {% if page_obj.has_previous %}
+                    <a href="{% url 'tasks:painel' %}?limit={{ page_obj.paginator.per_page }}&page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+                {% endif %}
+
+                <span>{{ page_obj.number }}</span>
+
+                {% if page_obj.has_next %}
+                    <a href="{% url 'tasks:painel' %}?limit={{ page_obj.paginator.per_page }}&page={{ page_obj.next_page_number }}"> {{page_obj.next_page_number }}</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="limit">
+            <p>LIMITE POR PÁGINA:</p>
+            {% for quantity in quantity_per_page %}
+                {% if quantity == limit %}
+                    <span>{{quantity}}</span>
+                {% else %}
+                    <a href="{% url 'tasks:painel' %}?limit={{quantity}}">{{ quantity }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}

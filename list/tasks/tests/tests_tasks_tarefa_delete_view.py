@@ -32,3 +32,4 @@ class TarefaDeleteViewTest(TasksBaseTest):
 
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 404)
+    

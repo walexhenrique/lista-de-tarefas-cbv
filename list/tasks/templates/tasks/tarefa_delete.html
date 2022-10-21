@@ -7,7 +7,7 @@
     <div class="content">
         <div class="content-form">
             <h1>APAGAR TAREFA</h1>
-            <form method="post">
+            <form method="post" class="forms">
                 {% csrf_token %}
                 <p>Você tem certeza que quer apagar a tarefa: {{ tarefa.title }} ?</p>
                 <button type="submit" class="send">Apagar</button>

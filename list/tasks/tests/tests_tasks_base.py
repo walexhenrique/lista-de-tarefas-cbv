@@ -4,7 +4,7 @@ from django.test import TestCase
 from ..models import Tarefa
 
 
-class TasksBaseTest(TestCase):
+class TasksMixin:
     def create_task(
         self,
         user: User = None,
@@ -20,3 +20,7 @@ class TasksBaseTest(TestCase):
         password: str = '123456'
     ) -> User:
         return User.objects.create_user(username=username, email=email, password=password)
+
+class TasksBaseTest(TestCase, TasksMixin):
+    def setUp(self) -> None:
+        return super().setUp()

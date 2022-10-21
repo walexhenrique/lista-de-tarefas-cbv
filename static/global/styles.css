@@ -92,8 +92,8 @@ header {
 
 }
 .errorlist li {
-    margin: 2rem 0;
-    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-size: .5rem 0 1rem 0;
 }
 
 .send {
@@ -241,6 +241,40 @@ footer a:hover {
     color: var(--color-font-primary);
 }
 
+.content-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination {
+    font-size: 1.7rem;
+    display: flex;
+    margin: 2rem 1rem;
+    align-items: flex-end;
+}
+
+.pagination a, .pagination span, .limit a, .limit span {
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid var(--color-font-primary);
+    text-decoration: none;
+    color: var(--color-font-primary);
+}
+
+.pagination a:hover, .limit a:hover {
+    background: var(--color-menu);
+    color: var(--color-background);
+}
+
+.pagination span, .limit span {
+    background: var(--color-font-secundary);
+}
+
+.limit {
+    font-size: 1.7rem;
+    margin: 2rem 1rem;
+}
+
 /* MESSAGES */
 
 .messages {
@@ -305,6 +339,18 @@ footer a:hover {
 
     .content-form h1 {
         font-size: 3rem;
+    }
+
+    .pagination {
+        font-size: 1rem;
+        display: flex;
+        margin: 1rem 1rem;
+        align-items: flex-end;
+    }
+
+    .limit {
+        font-size: 1rem;
+        margin: 1rem 1rem;
     }
     
 }

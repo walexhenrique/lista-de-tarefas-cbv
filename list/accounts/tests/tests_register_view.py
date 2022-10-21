@@ -66,7 +66,11 @@ class RegisterViewTest(AccountsBaseTest):
 
         self.assertContains(response, 'Erro, nome de usuário precisa de mais de 5 caracteres.')
 
-    
-        
+    def test_register_view_redirects_if_user_logged_alredy(self) -> None:
 
+        self.create_account()
+        self.client.login(username='breno', password='123456')
+        response = self.client.get(self.url)
 
+        self.assertRedirects(response, '/painel/')
+        self.assertEqual(response.status_code, 302)

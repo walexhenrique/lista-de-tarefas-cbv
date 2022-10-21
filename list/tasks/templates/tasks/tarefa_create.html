@@ -5,7 +5,7 @@
     <div class="content">
         <div class="content-form">
             <h1>CRIAR TAREFA</h1>
-            <form action="{% url 'tasks:create-tarefa' %}" method="post">
+            <form action="{% url 'tasks:create-tarefa' %}" method="POST" class="forms">
                 {% csrf_token %}
                 {{form}}
                 <button type="submit" class="send">CRIAR</button>

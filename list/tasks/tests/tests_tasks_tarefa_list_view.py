@@ -21,7 +21,7 @@ class TarefaListViewTest(TasksBaseTest):
 
         self.create_multiple_tasks(user, quantity=per_page+5)
         
-        response = self.client.get(self.url + f'?per={per_page}')
+        response = self.client.get(self.url + f'?limit={per_page}')
         return response
     
     def create_multiple_tasks(self, user: User, quantity: int = 10):

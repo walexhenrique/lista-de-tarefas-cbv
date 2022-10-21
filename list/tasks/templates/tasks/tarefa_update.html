@@ -6,7 +6,7 @@
     <div class="content">
         <div class="content-form">
             <h1>EDITAR TAREFA</h1>
-            <form method="post">
+            <form method="post" class="forms">
                 {% csrf_token %}
                 {{ form }}
                 <button type="submit" class="send">Editar</button>

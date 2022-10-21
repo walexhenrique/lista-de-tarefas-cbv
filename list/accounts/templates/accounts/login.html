@@ -5,7 +5,7 @@
     <div class="content">
         <div class="content-form">
             <h1>Entrar</h1>
-            <form action="{% url 'accounts:login' %}" method='POST'>
+            <form action="{% url 'accounts:login' %}" method="POST" class="forms">
                 {% csrf_token %}
                 {{form}}
                 <button type="submit" class="send">ENTRAR</button>
