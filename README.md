@@ -147,7 +147,7 @@ Tecnologias utilizadas na criação desse projeto
 ### 4 - Ao clicar em "Criar nova tarefa", você terá acesso à página de criação.
 ![pagina criar nova tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_criar_tarefa.png)
 
-### 5 - Finalizado a criação, ela será colocada na sua página de painel, onde lhe permite algumas opções de edição e exclusão
+### 5 - Finalizado a criação, ela será colocada na sua página de painel, onde lhe permite algumas opções de edição e exclusão.
 ![pagina painel com tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel_tarefa.png)
 
 ### 6 - Ao clicar em "editar tarefa", será apresentado a tarefa a ser editada e você poderá editar o título e o status.
@@ -156,13 +156,13 @@ Tecnologias utilizadas na criação desse projeto
 ### 7 - Finalizado a edição, ela já estará atualizada em seu painel.
 ![pagina painel editado](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel_editado.png)
 
-### 8 - Ao clicar em "Apagar tarefa", você será levado à página de confirmação
+### 8 - Ao clicar em "Apagar tarefa", você será levado à página de confirmação.
 ![pagina confirmação apagar tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_apagar_tarefa.png)
 
 ### 9 - Confirmado a exclusão, você será levado novamente para à página do painel.
 ![pagina painel apagado](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel_apagado.png)
 
-### 10 - Ao possuir muitas tarefas, será habilitado a paginação e apresentará a quantidade de itens de acordo com a escolha de "limite por página"
+### 10 - Ao possuir muitas tarefas, será habilitado a paginação e apresentará a quantidade de itens de acordo com a escolha de "limite por página".
 ![pagina painel paginacao](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_paginacao.png)
 ![pagina painel paginacao 2](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_paginacao_2.png)
 
