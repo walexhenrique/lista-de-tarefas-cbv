@@ -113,12 +113,12 @@ No linux:
 python3 manage.py test
 ```
 
-***Atenção***: Caso queira realizar apenas os testes funcionais.
+***Atenção***: Caso queira realizar apenas os testes funcionais (Selenium).
 ```
 pytest -m "functional_test"
 ```
 
-***Atenção***: Caso queira realizar todos os testes menos os funcionais.
+***Atenção***: Caso queira realizar todos os testes menos os funcionais (Selenium).
 ```
 pytest -m "not functional_test"
 ```
