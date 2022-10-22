@@ -1,6 +1,8 @@
 # Projeto lista de tarefas
 
 Um projeto de lista de tarefas com autenticação de usuário, criação, edição e exclusão de tarefas. Cujo principais objetivos foram: utilizar Class Based Views e a realização de testes (unitários, de integração e funcionais) mesclando com o conceito de mixins.
+
+
 ***
 
 ## 🚀 Começando
@@ -11,6 +13,10 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
     <li>Versão do python utilizada: 3.10.7</li>
     <li>Versão do django: 4.1.2</li>
 </ul>
+
+## Serviços usados
+- Github
+- Heroku
 
 #### 1 - Passo: Clone
 Realize um clone do projeto em seu computador
@@ -132,6 +138,8 @@ Tecnologias utilizadas na criação desse projeto
 * [Selenium](https://selenium-python.readthedocs.io/) - Utilizado na automatização dos testes funcionais (versão: Webdriver utilizado no projeto: 106)
 * [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - Estruturação da página
 * [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) - Estilização da página
+* [PostgreSQL](https://www.postgresql.org/) - Banco de dados utilizado ao fazer deploy no heroku.
+
 
 ## Como usar
 
@@ -185,6 +193,7 @@ As principais funcionalidades da aplicação são:
 - Limite de tarefas por página em conjunto com a paginação
 
 ## Links
+- Deploy no Heroku: https://lista-tarefas-django.herokuapp.com/
 - Repositório: https://github.com/walexhenrique/lista-de-tarefas-cbv
     - Em caso de encontrar bugs ou alguma sugestão entre em contato com o meu email: walex999067@gmail.com
 
