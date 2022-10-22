@@ -14,7 +14,7 @@ class TarefaListViewTest(TasksBaseTest):
         self.client.login(username='breno', password='123456')
         return user
     
-    def create_generic_pagination(self, per_page: int = 5):
+    def create_generic_pagination(self, per_page: int = 5) -> None:
         """simulates pagination according to the amount per page"""
         user = self.create_and_login()
         self.client.login(username='breno', password='123456')
@@ -24,7 +24,7 @@ class TarefaListViewTest(TasksBaseTest):
         response = self.client.get(self.url + f'?limit={per_page}')
         return response
     
-    def create_multiple_tasks(self, user: User, quantity: int = 10):
+    def create_multiple_tasks(self, user: User, quantity: int = 10) -> None:
         for i in range(quantity):
             self.create_task(user, title=f'tarefa {i}', finished=False)
         

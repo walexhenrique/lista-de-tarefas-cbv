@@ -13,19 +13,19 @@ class RegisterFormTest(AccountsBaseTest):
         }
         return super().setUp()
 
-    def test_register_form_unused_email_and_passwords_the_same_equals_validation_works(self):
+    def test_register_form_unused_email_and_passwords_the_same_equals_validation_works(self) -> None:
         form = RegisterForm(self.form_data)
         self.assertTrue(form.is_valid())
     
 
-    def test_register_form_is_not_valid_if_email_is_already_being_used(self):
+    def test_register_form_is_not_valid_if_email_is_already_being_used(self) -> None:
         self.create_account()
         self.form_data['username'] = 'carlinhos'
         form = RegisterForm(self.form_data)
 
         self.assertFalse(form.is_valid())
     
-    def test_register_form_is_not_valid_if_passwords_not_equals(self):
+    def test_register_form_is_not_valid_if_passwords_not_equals(self) -> None:
         self.form_data['password2'] = '11111111'
         form = RegisterForm(self.form_data)
         self.assertFalse(form.is_valid())

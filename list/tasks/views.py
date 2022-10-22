@@ -19,6 +19,7 @@ class TarefaDeleteView(DeleteView):
     context_object_name = 'tarefa'
 
     def get(self, request, *args, **kwargs):
+        # checks if the task is the user's own
         tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
         return super().get(request, *args, **kwargs)
     
@@ -49,6 +50,7 @@ class TarefaUpdateView(UpdateView):
     success_url = reverse_lazy('tasks:painel')
 
     def get(self, request, *args, **kwargs):
+        # checks if the task is the user's own
         tarefa = get_object_or_404(Tarefa, pk=self.kwargs.get('pk'), user=self.request.user)
         return super().get(request, *args, **kwargs)
     
@@ -62,8 +64,11 @@ class TarefaUpdateView(UpdateView):
     
 @method_decorator(login_required, name='dispatch')
 class TarefaListView(View):
+    """Class represents painel view"""
     def get(self, *args, **kwargs):
         tarefas = Tarefa.objects.filter(user=self.request.user).order_by('-id')
+
+        # Options for pagination limit
         limits = ['5', '10', '15']
 
         limit = self.request.GET.get('limit', '5')

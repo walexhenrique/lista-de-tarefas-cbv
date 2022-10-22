@@ -8,6 +8,7 @@ from .forms.form_register import RegisterForm
 
 
 class LoginView(View):
+    """Represents the login logic for users already registered"""
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('tasks:painel')
@@ -33,9 +34,12 @@ class LoginView(View):
 
 
 class RegisterView(View):
+    """Class represents creation logic for new users"""
     def get(self, *args, **kwargs):
+
         if self.request.user.is_authenticated:
             return redirect('tasks:painel')
+
         data_session = self.request.session.get('register_data')
         form = RegisterForm(data_session)
         return render(self.request, 'accounts/register.html', {'form': form})

@@ -53,7 +53,9 @@ class BaseFunctionalTest(StaticLiveServerTestCase, TasksMixin):
 @pytest.mark.functional_test
 class AllFunctionalTest(BaseFunctionalTest):
     """ Class responsible for all functional testing, registration, login, creation, editing and deletion of tasks """
-    def _create_generic_task_functional_test(self):
+    def _create_generic_task_functional_test(self) -> None:
+        """Function responsible for creating a new task after logged in"""
+
         # User sees "criar nova tarefa"
         new_task = self.browser.find_element(By.CLASS_NAME, 'new-task')
         new_task.click()
@@ -207,7 +209,7 @@ class AllFunctionalTest(BaseFunctionalTest):
             self.browser.find_element(By.TAG_NAME, 'body').text
         )
     
-    def test_tasks_user_login_and_successfully_creates_a_new_task_and_edit_with_successfully(self):
+    def test_tasks_user_login_and_successfully_creates_a_new_task_and_edit_with_successfully(self) -> None:
         # User logs in
         self.fast_login()
         
@@ -241,7 +243,7 @@ class AllFunctionalTest(BaseFunctionalTest):
 
         self.assertTrue(task_finished)
 
-    def test_tasks_user_login_and_successfully_creates_a_new_task_and_delete_with_successfully(self):
+    def test_tasks_user_login_and_successfully_creates_a_new_task_and_delete_with_successfully(self) -> None:
         # User logs in
         self.fast_login()
         
@@ -261,7 +263,7 @@ class AllFunctionalTest(BaseFunctionalTest):
             self.browser.find_element(By.TAG_NAME, 'body').text
         )
     
-    def test_user_logs_in_and_then_logout_successfully_and_redirects_to_login_page(self):
+    def test_user_logs_in_and_then_logout_successfully_and_redirects_to_login_page(self) -> None:
         # User logs in
         self.fast_login()
 
@@ -272,7 +274,3 @@ class AllFunctionalTest(BaseFunctionalTest):
             'Entrar',
             self.browser.find_element(By.TAG_NAME, 'body').text
         )
-
-
-
-

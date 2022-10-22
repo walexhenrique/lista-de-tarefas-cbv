@@ -20,7 +20,7 @@ class TarefaCreateViewTest(TasksBaseTest):
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
     
-    def test_tarefa_create_view_checks_if_the_registered_task_was_saved_in_the_database_correctly(self):
+    def test_tarefa_create_view_checks_if_the_registered_task_was_saved_in_the_database_correctly(self) -> None:
         user = self.create_account()
         self.client.login(username='breno', password='123456')
 
@@ -30,7 +30,7 @@ class TarefaCreateViewTest(TasksBaseTest):
         tarefa_exists = Tarefa.objects.filter(user=user).exists()
         self.assertTrue(tarefa_exists)
 
-    def test_tarefa_create_view_should_not_create_a_new_task_if_the_task_title_is_longer_than_120_characters(self):
+    def test_tarefa_create_view_should_not_create_a_new_task_if_the_task_title_is_longer_than_120_characters(self) -> None:
         user = self.create_account()
         self.client.login(username='breno', password='123456')
         self.form_data['title'] = 'A'*121
