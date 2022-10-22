@@ -9,6 +9,10 @@ Um projeto de lista de tarefas com autenticação de usuário, criação, ediç�
 - Github
 - Heroku
 
+## Metodologias usadas
+- TDD - Desenvolvimento orientado a testes
+- Kanban - Metodologia ágil
+
 
 ## 🚀 Começando
 
