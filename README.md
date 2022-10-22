@@ -140,7 +140,7 @@ Tecnologias utilizadas na criação desse projeto
 * [Selenium](https://selenium-python.readthedocs.io/) - Utilizado na automatização dos testes funcionais (versão: Webdriver utilizado no projeto: 106)
 * [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML) - Estruturação da página
 * [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS) - Estilização da página
-* [PostgreSQL](https://www.postgresql.org/) - Banco de dados utilizado ao fazer deploy no heroku.
+* [PostgreSQL](https://www.postgresql.org/) - Banco de dados utilizado ao fazer deploy no heroku
 
 
 ## Como usar
