@@ -5,6 +5,11 @@ Um projeto de lista de tarefas com autenticação de usuário, criação, ediç�
 
 ***
 
+## Serviços usados
+- Github
+- Heroku
+
+
 ## 🚀 Começando
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
@@ -14,9 +19,6 @@ Essas instruções permitirão que você obtenha uma cópia do projeto em opera�
     <li>Versão do django: 4.1.2</li>
 </ul>
 
-## Serviços usados
-- Github
-- Heroku
 
 #### 1 - Passo: Clone
 Realize um clone do projeto em seu computador
