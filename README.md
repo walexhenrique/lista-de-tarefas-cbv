@@ -136,41 +136,41 @@ Tecnologias utilizadas na criação desse projeto
 ## Como usar
 
 ### 1 - Quando entrar no site, você vai se deparar com uma tela de login, caso já tenha um usuário cadastro, basta se logar.
-![pagina de login] (.github/pagina_inicial.png)
+![pagina de login](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_inicial.png)
 
-### 2 - Caso não tenho um cadastro no site, crie a sua conta.
-![pagina de registro] (pagina_register.png)
+### 2 - Caso não tenha um cadastro no site, crie a sua conta.
+![pagina de registro](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_register.png)
 
 ### 3 - Ao realizar o cadastro e logar corretamente, você terá acesso ao seu painel de tarefas.
-![pagina painel usuário] (pagina_painel.png)
+![pagina painel usuário](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel.png)
 
 ### 4 - Ao clicar em "Criar nova tarefa", você terá acesso à página de criação.
-![pagina criar nova tarefa] (pagina_criar_tarefa.png)
+![pagina criar nova tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_criar_tarefa.png)
 
 ### 5 - Finalizado a criação, ela será colocada na sua página de painel, onde lhe permite algumas opções de edição e exclusão
-![pagina painel com tarefa] (pagina_painel_tarefa.png)
+![pagina painel com tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel_tarefa.png)
 
 ### 6 - Ao clicar em "editar tarefa", será apresentado a tarefa a ser editada e você poderá editar o título e o status.
-![pagina editar tarefa] (pagina_editar_tarefa.png)
+![pagina editar tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_editar_tarefa.png)
 
 ### 7 - Finalizado a edição, ela já estará atualizada em seu painel.
-![pagina painel editado] (pagina_editar_tarefa.png)
+![pagina painel editado](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel_editado.png)
 
 ### 8 - Ao clicar em "Apagar tarefa", você será levado à página de confirmação
-![pagina confirmação apagar tarefa] (pagina_apagar_tarefa.png)
+![pagina confirmação apagar tarefa](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_apagar_tarefa.png)
 
-### 9 - Confirmado a exclusão, você será levado novamente para a página do painel.
-![pagina painel apagado] (pagina_painel_apagado.png)
+### 9 - Confirmado a exclusão, você será levado novamente para à página do painel.
+![pagina painel apagado](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_painel_apagado.png)
 
 ### 10 - Ao possuir muitas tarefas, será habilitado a paginação e apresentará a quantidade de itens de acordo com a escolha de "limite por página"
-![pagina painel paginacao] (pagina_paginacao.png)
-![pagina painel paginacao 2] (pagina_paginacao_2.png)
+![pagina painel paginacao](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_paginacao.png)
+![pagina painel paginacao 2](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_paginacao_2.png)
 
 ### 11 - Ao mudar a opção de "limite por página" para 10, a página utiliza o limite de 10 tarefas por página.
-![pagina paginacao limite por página] (pagina_paginacao_escolha.png)
+![pagina paginacao limite por página](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_paginacao_escolha.png)
 
 ### 12 - Ao clicar em "Sair" você será redirecionado para a página de login e automaticamente estará deslogado da aplicação.
-![pagina ao sair] (pagina_inicial.png)
+![pagina ao sair](https://github.com/walexhenrique/lista-de-tarefas-cbv/blob/main/.github/pagina_inicial.png)
 
 ## Funcionalidades
 
